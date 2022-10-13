@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "postinstall": "netlify-lambda install",
+    "start": "./node_modules/.bin/netlify-lambda serve src",
+    "build": "./node_modules/.bin/netlify-lambda build src"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "netlify-lambda": "^2.0.15",
+    "serverless-http": "^3.0.3"
+  }
+}
