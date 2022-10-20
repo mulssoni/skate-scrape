@@ -15,9 +15,9 @@ exports.handler = async () => {
 
     return {
       statusCode: 200,
-      body: postTitles,
+      body: JSON.stringify(postTitles),
     };
   } catch (err) {
-    return { statusCode: 404, body: err };
+    return { statusCode: 404, body: JSON.stringify(err) };
   }
 };
