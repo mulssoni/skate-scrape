@@ -10,7 +10,11 @@ exports.handler = async () => {
 
     $("h4.post-title > a.post-title-link", data).each((_idx, el) => {
       const postTitle = $(el).text();
-      postTitles.push(postTitle);
+      const url = $(el).attr("href");
+      postTitles.push({
+        title: postTitle,
+        link: "https://www.thrashermagazine.com" + url,
+      });
     });
     console.log(postTitles);
     return {
