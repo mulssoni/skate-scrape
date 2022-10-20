@@ -3,7 +3,7 @@ const cheerio = require("cheerio");
 
 exports.handler = async () => {
   try {
-    const res = axios.get("https://www.thrashermagazine.com/full-parts/");
+    const res = await axios.get("https://www.thrashermagazine.com/full-parts/");
     const { data } = res;
     const $ = cheerio.load(data);
     const postTitles = [];
@@ -12,7 +12,7 @@ exports.handler = async () => {
       const postTitle = $(el).text();
       postTitles.push(postTitle);
     });
-
+    console.log(postTitles);
     return {
       statusCode: 200,
       body: JSON.stringify(postTitles),
